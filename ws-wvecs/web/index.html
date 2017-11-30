@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WordVecSearcher</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta name="Description" content="Home Page" />
+        <meta name="Keywords" content="Word Embedding, Pretrained, Word2vec" />
+
+        <link rel="ICON"          href="favicon.ico" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+
+        <!--Click <a href="WVecRetrieverServlet">here</a> to go to the servlet.-->
+
+<!--        <br> <br>-->
+
+        <form action="getvec" name="getVectors" target="_blank"
+              method="get">    <!-- method can be changed to either get or post -->
+
+            Collection:
+            <input type="radio" name="coll" value="trec45" /> TREC Disk 4-5
+            <input type="radio" name="coll" value="wt10g" /> WT10G
+            <input type="radio" name="coll" value="gov2" /> GOV2
+            <input type="radio" name="coll" value="foo" checked/> Foo
+
+            <br> <br>
+
+            Analyzed:
+            <input type="radio" name="analyzed" value="true" checked/> True
+            <input type="radio" name="analyzed" value="false" /> False
+
+            <br> <br>
+
+
+            Vector size:
+            <input type="radio" name="vecsize" value="200" checked disabled/> 200
+            <input type="radio" name="vecsize" value="500" disabled/> 500
+            
+            <br> <br>
+
+            Training model:
+            <input type="radio" name="model" value="cbow" checked disabled/> CBOW
+            <input type="radio" name="model" value="skipgram" disabled /> Skipgram
+            
+            <br> <br>
+
+
+            Enter the word: <input type = "text" name = "word"> 
+            To Analyze: 
+            <input type="radio" name="toAnalyze" value="true" checked/> True
+            <input type="radio" name="toAnalyze" value="false" /> False
+            <br/>
+            <input type = "submit" name="submit" value = "Get Vector" />
+
+        </form>
+
+        <form action="getnn" name="getNNs" target="_blank"
+              method="get">    <!-- method can be changed to either get or post -->
+            <input type = "submit" name="submit" value = "Get NN" />
+        </form>
+
+<!--        <form action="${pageContext.request.contextPath}/WVecRetrieverServlet">
+            result-<input type="text" value='<c:out value="${requestScope.result}"/>' >
+        </form>-->
+
+        <!--<input type="text" name="done" value='<%=request.getAttribute("VecValue")%>'/>--> 
+<!--        <input type="text" name="done" value="<%=output%>"/> 
+        <input type="text" name="done" value="${VecValue}" /> -->
+    </body>
+</html>

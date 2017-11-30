@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>WVecRetrieverServlet</servlet-name>
+        <servlet-class>org.java.servlets.WVecRetrieverServlet</servlet-class>
+        <init-param>
+            <param-name>configFile</param-name>
+            <!--<param-value>/user1/faculty/cvpr/irlab/dwaipayan/programs/wvec-reproducibility/servlet-init.properties</param-value>-->
+            <param-value>/home/dwaipayan/Dropbox/programs/wvec-reproducibility/servlet-init.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WVecRetrieverServlet</servlet-name>
+        <url-pattern>/WVecRetrieverServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WVecRetrieverServlet</servlet-name>
+        <url-pattern>/getvec</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NNRetrieverServlet</servlet-name>
+        <servlet-class>org.java.servlets.NNRetrieverServlet</servlet-class>
+        <init-param>
+            <param-name>configFile</param-name>
+            <!--<param-value>/user1/faculty/cvpr/irlab/dwaipayan/programs/wvec-reproducibility/servlet-init.properties</param-value>-->
+            <param-value>/home/dwaipayan/Dropbox/programs/wvec-reproducibility/servlet-init.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NNRetrieverServlet</servlet-name>
+        <url-pattern>/NNRetrieverServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NNRetrieverServlet</servlet-name>
+        <url-pattern>/getnn</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
